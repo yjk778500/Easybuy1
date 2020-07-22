@@ -10,7 +10,7 @@ import com.utils.DataBaseUtil;
  * 数据库管理！
  * 测试在远程库修改红红火火恍恍惚惚
  * @author Administrator
- *
+ *一起来打酱油啊
  */
 public class BaseDao {
 	// 声明Connection对象属性！
