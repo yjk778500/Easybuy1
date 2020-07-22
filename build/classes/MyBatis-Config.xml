@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 引入外部数据库配置文件 -->
+	<properties resource="database.properties"/>
+	<!-- 配置别名 -->
+	<typeAliases>
+		<package name="com.entity"/>
+	</typeAliases>
+	<!-- 配置环境 -->
+	<environments default="test">
+		<environment id="test">
+			<!-- 配置事务 -->
+			<transactionManager type="JDBC"/>
+			<!-- 配置数据源 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}"/>
+				<property name="username" value="${user}"/>
+				<property name="password" value="${password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 配置映射器 -->
+	<mappers>
+		<mapper resource="com/dao/EasybuyCollectMapper.xml"/>
+		<mapper resource="com/dao/EasybuyUserAddressMapper.xml"/>
+		<mapper resource="com/dao/EasybuyUserMapper.xml"/>
+		<mapper resource="com/dao/NewsMapper.xml"/>
+		<mapper resource="com/dao/OrderMapper.xml"/>
+		<mapper resource="com/dao/OrderDetailMapper.xml"/>
+		<mapper resource="com/dao/ProductCategoryMapper.xml"/>
+		<mapper resource="com/dao/ProductMapper.xml"/>
+	</mappers>
+</configuration>
